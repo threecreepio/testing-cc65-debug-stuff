@@ -1,0 +1,21 @@
+MEMORY
+{
+	INES:     start =     0, size =   $10, fill=yes, fillval=$00;
+	EMPTY0:   start = $8000, size = $8000, fill=yes, fillval=$01, define = yes;
+	EMPTY1:   start = $8000, size = $8000, fill=yes, fillval=$02, define = yes;
+	ALT:      start = $8000, size = $8000, fill=yes, fillval=$03, define = yes;
+	PRG:      start = $8000, size = $8000, fill=yes, fillval=$04, define = yes;
+	CHR:      start = $0000, size = $2000, fill=yes, fillval=$00;
+	DEBUG:    start =    $FFFF, size = $FFFF, file = "debug.bin";
+}
+
+SEGMENTS
+{
+	INES:       load = INES, type = ro;
+	EMPTY0:     load = EMPTY0, type = ro;
+	EMPTY1:     load = EMPTY1, type = ro;
+	ALT:        load = ALT, type = ro;
+	PRG:        load = PRG, type = ro;
+	CHR:        load = CHR, type = ro;
+	DEBUG:      load = DEBUG, type = ro, optional = yes;
+}
